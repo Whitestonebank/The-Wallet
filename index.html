@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrustLite Wallet - Modern</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">
+        <span>🔐</span><h1>TrustLite Wallet</h1>
+      </div>
+      <button id="logoutBtn" title="Logout" aria-label="Logout">Logout</button>
+    </header>
+
+    <main>
+      <aside id="sidebar">
+        <h2>Coins</h2>
+        <ul id="coinList" role="list">
+          <!-- Coins will be populated here -->
+        </ul>
+      </aside>
+
+      <section id="dashboard" class="hidden">
+        <div class="dashboard-header">
+          <h2><span id="selectedCoinIcon"></span><span id="selectedCoinName"></span> Wallet</h2>
+          <p id="userDisplay" class="user-label"></p>
+        </div>
+
+        <div class="balance-section">
+          <h3>Balance</h3>
+          <p id="coinBalance" class="balance"></p>
+          <p id="coinBalanceUSD" class="balance-usd"></p>
+        </div>
+
+        <div class="actions">
+          <div class="send-section">
+            <h3>Send <span id="selectedCoinSymbolSend"></span></h3>
+            <input type="text" id="recipient" placeholder="Recipient Username" autocomplete="off" aria-label="Recipient Username" />
+            <input type="number" id="amount" placeholder="Amount" min="0" step="any" aria-label="Amount to Send" />
+            <button id="sendBtn" aria-label="Send Crypto">Send</button>
+            <p id="send-message" class="message"></p>
+          </div>
+
+          <div class="external-send-section">
+            <h3>Send to External Wallet</h3>
+            <input type="text" id="externalWallet" placeholder="Wallet Address" autocomplete="off" aria-label="External Wallet Address" />
+            <input type="number" id="amountInUSD" placeholder="Amount in USD" min="0" step="any" aria-label="Amount in USD" />
+            <button id="externalSendBtn" aria-label="Send to External Wallet">Confirm Transfer</button>
+            <p id="externalMessage" class="message"></p>
+          </div>
+        </div>
+
+        <section id="transaction-history">
+          <h3>Transaction History</h3>
+          <div id="historyList"></div>
+        </section>
+      </section>
+
+      <section id="auth-container" class="auth-container">
+        <h2>Login / Register</h2>
+        <input type="text" id="username" placeholder="Username" autocomplete="off" aria-label="Username" />
+        <input type="password" id="password" placeholder="Password" autocomplete="off" aria-label="Password" />
+        <div class="auth-buttons">
+          <button id="loginBtn" aria-label="Login">Login</button>
+          <button id="registerBtn" aria-label="Register">Register</button>
+        </div>
+        <p id="auth-message" class="message"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
